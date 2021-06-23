@@ -1,0 +1,38 @@
+{% extends 'myapp/user_base.html' %}
+{% load static %}
+{% block title %}Payment {% endblock %}
+{% block body %}
+<center>
+    <h1>Payment </h1>
+     <div class="container">
+    <form role="form" name="frm" action="{% url 'user_service_payment_add'%}" method="post">
+        {% csrf_token %}
+        	<input class="form-control" type="hidden"  id="service_id" name="service_id" value={{service_id}} required="required">
+
+        <div class="form-group">
+            <label for="remarks">remarks :</label>
+            <input class="form-control" type="text"  id="remarks" name="remarks" value='' required="required">
+        </div>
+        <div class="form-group">
+            <label for="bdt">Booking Date :</label>
+            <input class="form-control" type="date"  id="bdt" name="bdt" value='' required="required">
+        </div>
+        <div class="form-group">
+            <label for="amt">Amount :</label>
+            <input class="form-control" type="text"  id="amt" name="amt" value={{amt}} required="required">
+        </div>
+        <div class="form-group">
+            <label for="card_no">card_no :</label>
+            <input class="form-control" type="text"  id="card_no" name="card_no" value='' required="required">
+        </div>
+        <div class="form-group">
+            <label for="cvv">cvv :</label>
+            <input class="form-control" type="text"  id="cvv" name="cvv" value='' required="required">
+        </div>
+        <button type="submit" class="btn btn-info" id="bt" name="bt">Book</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

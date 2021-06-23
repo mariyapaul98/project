@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}
+make your cake
+{% endblock %}
+<!--{% block background %}background="{% static './myapp/images/farmer.jpg' %}"{% endblock %}-->
+{% block body %}
+<center>
+    <img src="{% static './myapp/images/beauty.jpg' %}" width="600" height="400">
+</center>
+{% endblock %}
